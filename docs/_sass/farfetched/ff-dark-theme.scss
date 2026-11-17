@@ -207,6 +207,7 @@ em.ff-highlight {
   color: var(--text-primary);
   letter-spacing: var(--tracking-tight);
 }
+.site-nav__logo:visited,
 .site-nav__logo:hover {
   color: var(--text-primary);
 }
@@ -229,6 +230,10 @@ em.ff-highlight {
   white-space: nowrap;
   transition: background var(--duration-fast) var(--ease-standard),
               color var(--duration-fast) var(--ease-standard);
+}
+// Minima's a:visited outranks .site-nav__link; keep visited nav links in palette.
+.site-nav__link:visited {
+  color: var(--text-secondary);
 }
 .site-nav__link:hover {
   color: var(--text-primary);
@@ -566,6 +571,34 @@ em.ff-highlight {
 }
 
 // ---------------------------------------------------------------------------
+// Clients (home)
+// ---------------------------------------------------------------------------
+
+// Keep in-page anchor targets clear of the sticky .site-nav.
+.ff-section[id] {
+  scroll-margin-top: 80px;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.client-card {
+  display: block;
+  color: inherit;
+}
+.client-card:hover {
+  color: inherit;
+}
+.client-card__logo {
+  display: block;
+  height: 48px;
+  width: auto;
+  margin-bottom: 24px;
+}
+
+// ---------------------------------------------------------------------------
 // Labs teaser (home) + about teaser (home)
 // ---------------------------------------------------------------------------
 
@@ -746,6 +779,7 @@ em.ff-highlight {
   .stat-grid,
   .leverage-grid,
   .services-grid,
+  .clients-grid,
   .expertise-grid,
   .process-grid,
   .about-teaser {
