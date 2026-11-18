@@ -116,8 +116,30 @@ layout: home
   </div>
 </section>
 
+<!-- Clients -->
+<section class="ff-section" id="clients">
+  <h2 class="expertise-heading">Clients</h2>
+  <div class="clients-grid">
+    <a class="ff-card ff-card--interactive client-card" href="https://www.concretetransition.com" target="_blank" rel="noopener">
+      <img class="client-card__logo" src="/assets/company-logos/clients/concrete-transition-capital-logo.png" alt="Concrete Transition Capital" width="158" height="48">
+      <div class="ff-card__title">Concrete Transition Capital</div>
+      <div class="ff-card__body">Platform and AI engineering leadership for the Concrete Terminal, CTC's cement-to-concrete market data platform and its AI-agent interface.</div>
+    </a>
+    <a class="ff-card ff-card--interactive client-card" href="https://partissolutions.com/" target="_blank" rel="noopener">
+      <img class="client-card__logo" src="/assets/company-logos/clients/partis-solutions-logo.svg" alt="Partis Solutions" width="179" height="48">
+      <div class="ff-card__title">Partis Solutions</div>
+      <div class="ff-card__body">Technology and platform consulting alongside Partis, the gaming industry's specialist advisory and implementation partner.</div>
+    </a>
+    <a class="ff-card ff-card--interactive client-card" href="#case-study">
+      <img class="client-card__logo" src="/assets/company-logos/clients/betty-ca-logo.svg" alt="Betty.ca" width="151" height="48">
+      <div class="ff-card__title">Betty.ca</div>
+      <div class="ff-card__body">Player segmentation and platform architecture for a Canadian iGaming operator. See the case study below.</div>
+    </a>
+  </div>
+</section>
+
 <!-- Case study -->
-<section class="ff-section">
+<section class="ff-section" id="case-study">
   <h2 class="expertise-heading">Recent client case study</h2>
   <div class="case-study-card">
     <div class="case-study-header">
