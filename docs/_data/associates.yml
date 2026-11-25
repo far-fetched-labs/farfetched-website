@@ -1,0 +1,64 @@
+# Associates roster, rendered on /associates/ in the order listed here.
+#
+# To add someone, copy a block and fill it in. Only `name` and `blurb` are
+# required; every other field is optional and is left out of the page when
+# empty.
+#
+#   name:          Full name (people) or trading name (businesses).
+#   image:         Path to a headshot or logo, e.g. /assets/associates/jane-doe.jpg
+#                  People: a portrait at least 600px wide. It is cropped to 4:5
+#                  and shown in the site's blue tint, with full colour on hover.
+#                  Businesses: an SVG or transparent PNG logo, shown uncropped
+#                  on a square tile.
+#                  Without an image, the page shows the name's initials instead.
+#   logo_background: light   (businesses only) Puts a dark logo on a pale tile
+#                  so it stays visible on the dark site.
+#   image_position: "50% 20%"   (people only) Moves the 4:5 crop when a face
+#                  sits off-centre: horizontal % then vertical %. The default
+#                  is "50% 30%", which suits most head-and-shoulders shots.
+#   role:          People: title, e.g. "Fractional CFO".
+#                  Businesses: what they do, e.g. "Payments compliance consultancy".
+#   company:       People only: where they work, e.g. "Acme Ltd".
+#   relationship:  How they work with Far Fetched, e.g. "Delivery partner".
+#   sectors:       List of sectors, e.g. [iGaming, Fintech].
+#   blurb:         Two or three sentences, about 60 words at most.
+#   linkedin:      Full LinkedIn URL.
+#   website:       Full website URL.
+#   sample: true   Marks a placeholder entry. Delete the sample entries before
+#                  this page goes live.
+
+people:
+  - name: Sample Person
+    sample: true
+    role: Fractional CFO
+    company: Example Ltd
+    relationship: Delivery partner
+    sectors: [iGaming, Fintech]
+    blurb: >-
+      Two or three sentences on who this person is and why they are worth
+      knowing. Say what they are best at and the kind of problem Far Fetched
+      brings them in for. Keep it under about 60 words so the rows stay even.
+    linkedin: https://www.linkedin.com/
+    website: https://example.com/
+
+  - name: Another Example
+    sample: true
+    role: Head of Product Design
+    relationship: Far Fetched Labs collaborator
+    sectors: [Health and fitness]
+    blurb: >-
+      A second placeholder so you can see how the roster reads with more than
+      one person. Replace it with a real associate, or delete it.
+    linkedin: https://www.linkedin.com/
+
+businesses:
+  - name: Sample Studio
+    sample: true
+    role: Data engineering consultancy
+    relationship: Platform partner
+    sectors: [iGaming, Media]
+    blurb: >-
+      One or two sentences on what this business does and how it works with
+      Far Fetched. Add the logo as an SVG or transparent PNG in
+      /assets/associates/ and set its path in `image`.
+    website: https://example.com/

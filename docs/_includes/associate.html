@@ -1,0 +1,77 @@
+{%- comment -%}
+  One roster entry. Params: entry (an item from site.data.associates),
+  kind ("person" or "business").
+{%- endcomment -%}
+{%- assign entry = include.entry -%}
+{%- assign kind = include.kind -%}
+{%- assign name_parts = entry.name | split: " " -%}
+{%- assign initials = name_parts.first | slice: 0 -%}
+{%- if name_parts.size > 1 -%}
+  {%- assign last_initial = name_parts.last | slice: 0 -%}
+  {%- assign initials = initials | append: last_initial -%}
+{%- endif -%}
+<article class="associate associate--{{ kind }}" id="{{ entry.name | slugify }}">
+  {%- if entry.image %}
+    {%- if kind == "business" %}
+  <div class="associate__media associate__media--logo{% if entry.logo_background == 'light' %} associate__media--light{% endif %}">
+    <img src="{{ entry.image | relative_url }}" alt="{{ entry.name }} logo" loading="lazy">
+  </div>
+    {%- else %}
+  <div class="associate__media associate__media--photo">
+    <img src="{{ entry.image | relative_url }}" alt="Portrait of {{ entry.name }}" loading="lazy"{% if entry.image_position %} style="object-position: {{ entry.image_position | escape }}"{% endif %}>
+  </div>
+    {%- endif %}
+  {%- else %}
+  <div class="associate__media associate__media--monogram" aria-hidden="true">
+    <span>{{ initials | upcase }}</span>
+  </div>
+  {%- endif %}
+
+  <header class="associate__head">
+    {%- if entry.sample %}
+    <p class="associate__sample">Sample entry: replace in <code>_data/associates.yml</code></p>
+    {%- endif %}
+    <h3 class="associate__name">{{ entry.name }}</h3>
+    {%- if entry.role or entry.company %}
+    <p class="associate__role">{{ entry.role }}{% if entry.role and entry.company %}, {% endif %}{% if entry.company %}<span class="associate__company">{{ entry.company }}</span>{% endif %}</p>
+    {%- endif %}
+  </header>
+
+  <p class="associate__blurb">{{ entry.blurb }}</p>
+
+  {%- if entry.relationship or entry.sectors or entry.linkedin or entry.website %}
+  <dl class="associate__meta">
+    {%- if entry.relationship %}
+    <div>
+      <dt>With Far Fetched</dt>
+      <dd>{{ entry.relationship }}</dd>
+    </div>
+    {%- endif %}
+    {%- if entry.sectors %}
+    <div>
+      <dt>Sectors</dt>
+      <dd>
+        <ul class="associate__sectors">
+          {%- for sector in entry.sectors %}
+          <li>{{ sector }}</li>
+          {%- endfor %}
+        </ul>
+      </dd>
+    </div>
+    {%- endif %}
+    {%- if entry.linkedin or entry.website %}
+    <div>
+      <dt>Links</dt>
+      <dd class="associate__links">
+        {%- if entry.linkedin %}
+        <a href="{{ entry.linkedin }}" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden">: {{ entry.name }} (opens in a new tab)</span></a>
+        {%- endif %}
+        {%- if entry.website %}
+        <a href="{{ entry.website }}" target="_blank" rel="noopener">Website<span class="visually-hidden">: {{ entry.name }} (opens in a new tab)</span></a>
+        {%- endif %}
+      </dd>
+    </div>
+    {%- endif %}
+  </dl>
+  {%- endif %}
+</article>
