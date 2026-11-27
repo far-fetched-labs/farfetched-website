@@ -51,6 +51,21 @@ people:
       one person. Replace it with a real associate, or delete it.
     linkedin: https://www.linkedin.com/
 
+  - name: Toby Wright
+    image: /assets/associates/toby-wright.jpg
+    role: Owner
+    company: Wright Automation
+    relationship: Delivery Partner
+    sectors: [iGaming, SaaS, eCommerce]
+    blurb: >-
+      My work spans APIs, data pipelines, SQL, data warehouses, ETL/ELT,
+      workflow automation and visualisation. I connect the systems your team
+      already uses rather than prescribing a stack. Wright Automation is built
+      on a simple idea: good technology should make everyday work clearer and
+      easier, and your team should be able to use it.
+    linkedin: https://www.linkedin.com/in/tobyjameswright/
+    website: https://www.wrightautomation.co.uk/
+
 businesses:
   - name: Sample Studio
     sample: true
